@@ -2,4 +2,4 @@ Helix Framework for Wordpress
 ===============
 
 
-Helix framework for wordpress
+Helix framework for wordpress2
