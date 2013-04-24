@@ -1,0 +1,176 @@
+/**
+ * @package Helix Framework
+ * @author JoomShaper http://www.joomshaper.com
+ * @copyright Copyright (c) 2010 - 2013 JoomShaper
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
+*/
+
+#sp-menu {
+	margin-top:4px;
+}
+
+#sp-main-menu {
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+		
+		&.level-0 {
+			> li {
+				//Parent List Item
+				display:inline-block;
+				margin:0 5px 0 0;
+				padding:0;
+				position:relative;
+				
+				//Anchor Link
+				a {
+					display:block;
+					margin:0;
+					padding:10px;
+					color:#666;
+					
+					//Menu Item Description
+					.menu-desc {
+						font-size:11px;
+						color:#999;
+						display:block;
+					}
+				}
+				
+				&:hover,
+				&.active {
+					background-color:#eee;
+					.box-shadow(~"inset 0 2px 1px rgba(0, 0, 0, 0.05)");
+					border-bottom:1px solid @white;
+					.border-radius(3px);
+				}
+				&:hover {
+					background-color:@white;
+					.box-shadow(~"inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 3px 8px rgba(0, 0, 0, 0.125)");
+				}
+				&.parent {
+					&:hover {
+						.border-radius(3px 3px 0 0);
+					}
+				}
+				//Animation
+				.transition(all 200ms);			
+			}
+		}
+	}
+
+	//Dropdowns
+	.sp-submenu-wrap {
+		position: absolute;
+		width:200px;
+		
+		z-index:0;
+		visibility:hidden;
+		opacity:0;
+		&.open {
+			visibility:visible;
+			opacity:1;
+			z-index:1;
+		}
+		
+		//Submenu Parent
+		&.sub-level {
+			margin-top:30px;
+			&.open {
+				margin-top:0;
+			}
+			> ul{ width:100% }
+		}
+		
+		//Submenu Children
+		&.sub-level-child {
+			> ul{ width:100% }
+		}
+		
+		ul{ 
+			background:#fff;
+			.box-shadow(~"0 3px 8px rgba(0, 0, 0, 0.125)"); 
+		}
+
+		//Transition
+		&.sub-level,
+		&.sub-level-child {
+			&.open {
+				.transition(margin 200ms);
+			}
+		}
+	}		
+	
+	//Menu Items for Dropdown
+	li{
+		li {
+			display:block;
+			border-top:1px solid #eee;
+			position:relative;
+			&:first-child {
+				border-top: none;
+			}
+			a {
+				display:block;
+				font-size:12px;
+				font-weight:400;
+				line-height:normal;
+				text-decoration:none;
+				padding:10px;
+				color:#999;
+			}
+			&:hover,
+			&.active{
+				background:#f5f5f5;
+			}
+			//Animation
+			.transition(all 200ms);
+		}
+	}
+}
+
+//RTL
+.ltr{
+	.sp-submenu-wrap{
+		left:0;
+		//Submenu Children
+		&.sub-level-child {
+			margin-left:250px;
+			&.open {
+				margin-left:200px;
+			}
+		}
+	}
+}
+
+//RTL
+.rtl{
+	.sp-submenu-wrap{
+		right:0;
+		//Submenu Children
+		&.sub-level-child {
+			margin-right:250px;
+			&.open {
+				margin-right:200px;
+			}
+		}
+	}
+}
+
+//Mobile Menu
+#sp-moble-menu {
+	position:relative;
+	select{
+		&.select-menu {
+			width: 32px;
+			height: 27px;
+			opacity: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index:1;
+			cursor:pointer;
+		}
+	}
+}

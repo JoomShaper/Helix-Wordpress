@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<helix>
+    <positions>
+        <position>feature</position>
+        <position>user1</position>
+        <position>search</position>
+        <position>left</position>
+        <position>right</position>
+        <position>bottom1</position>
+        <position>bottom2</position>
+        <position>bottom3</position>
+        <position>bottom4</position>
+        <position>footer</position>
+    </positions>
+	
+    <config>
+		<fieldset name="Overview" icon="icon-info-sign color6">
+			<field type="include" file="overview.php" />
+		</fieldset>
+	
+		<fieldset name="Basic" icon="icon-home color1">
+			<field name="logo_type" type="radio" default="css" label="Logo Type" description="Select logo Type" >
+				<option value="css">CSS</option>
+				<option value="text">Text</option>
+				<option value="0">Hide</option>
+			</field>
+			
+			<field name="logo_text" type="text" default="Helix" label="Logo Text" description="Enter your website name." />
+			<field name="logo_slogan" type="text" default="Joomla! Templates Framework" label="Logo Slogan" description="Enter your website slogan." />
+			<field name="logo_width" type="text" unit="px" default="130" label="Logo Width" description="Set the width of logo" />
+			<field name="logo_height" type="text" unit="px" default="50" label="Logo Height" description="Set the height of logo" />
+			
+			<field name="direction" type="radio" default="ltr" label="Text Direction" description="Set language dircetion as RTL or LTR.">
+				<option value="ltr">LTR</option>
+				<option value="rtl">RTL</option>
+			</field>			
+			<field name="showcp" type="radio" class="btn-group" default="1" label="Show Copyright" description="Whether to show or hide copyright message from the footer.">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>
+			<field name="copyright" type="textarea" rows="6" cols="30" default="2012 Shaper Helix Demo. All Rights Reserved." label="Copyright message" description="Set copyright message." />
+			<field name="show_helix_logo" type="radio" class="btn-group" default="1" label="Show Helix Logo" description="Whether to show the Helix Framework logo.">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>		
+		</fieldset>
+		
+		<fieldset name="Presets" icon="icon-pencil color4">
+			
+			<field name="preset" type="preset" default="preset1" label="Presets" description="Select preset from the following list.">
+				<option value="preset1">Preset1</option>
+				<option value="preset2">Preset2</option>
+				<option value="preset3">Preset3</option>
+			</field>
+			
+			<field name="preset" type="presetoption" default="preset1" label="Preset Settings">
+			
+				<select name="preset1">
+					<option name="header" value="#f8f8f8" type="color">Header Color</option>
+					<option name="bg" value="#f2f2f2" type="color">Background Color</option>
+					<option name="text" value="#666666" type="color">Text Color</option>
+					<option name="link" value="#22b8f0" type="color">Link Color</option>
+				</select>
+				
+				<select name="preset2">
+					<option name="header" value="#eeeeee" type="color">Header Color</option>
+					<option name="bg" value="#f5f5f5" type="color">Background Color</option>
+					<option name="text" value="#444444" type="color">Text Color</option>
+					<option name="link" value="#6d7f1b" type="color">Link Color</option>
+				</select>
+				
+				<select name="preset3">
+					<option name="header" value="#e5ddd5" type="color">Header Color</option>
+					<option name="bg" value="#f2f2f2" type="color">Background Color</option>
+					<option name="text" value="#333333" type="color">Text Color</option>
+					<option name="link" value="#aa824a" type="color">Link Color</option>
+				</select>
+				
+			</field>
+			
+		</fieldset>
+		
+		<fieldset name="contents" icon="icon-hdd color9">
+			<fields name="title">
+				<field name="show_blog_title" type="radio" class="btn-group" default="1" label="Blog Title" description="Whether to show the blog title">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+				<field name="blog_title_position" type="radio" class="btn-group" default="right" label="Blog Title Position" description="Set blog title position">
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="blog_title_separator" type="text" default="|" label="Blog Title Separator" description="Blog title separator" />
+
+				<field name="show_tagline" type="radio" class="btn-group" default="1" label="Show Tagline" description="Whether to show the tagline in frontpage or home.">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>	
+			</fields>
+		
+			<fields name="blog">
+			
+				<field name="blog_category" type="radio" class="btn-group" default="2" label="Category Display" description="Include or Exclude Blog Categories">
+						<option value="0"> Hide Selected </option>
+						<option value="1"> Display Selected </option>
+						<option value="2"> Display All </option>
+				</field>
+			
+				<field name="blog_categories" type="category" multiple="1" default="" label="Blog categories" description="Include blog categories" />
+			
+				<field name="blog_order_by" type="list" default="date" label="Blog Order" description="Blog Order">
+					<option value="comment_count">Comment Count</option>
+					<option value="date">Date</option>
+					<option value="title">Title</option>
+					<option value="modified">Modified</option>
+					<option value="none">None</option>
+					<option value="id">ID</option>
+					<option value="parent">Parent</option>
+					<option value="rand">Random</option>
+				</field>			
+				
+				<field name="blog_order" type="list" default="DESC" label="Ordering Type" description="Ordering Type">
+					<option value="ASC">ASC</option>
+					<option value="DESC">DESC</option>
+				</field>
+				
+				<field name="blog_show_title" type="radio" default="1" label="Show Title" description="Show Blog Title">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="blog_linked_title" type="radio" default="1" label="Linked Title" description="Article title link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="blog_show_meta" type="radio" default="1" label="Show Meta" description="You can display the Modified Date along with your blog content.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>			
+				<field name="blog_meta" type="textarea" rows="6" cols="30" default="Posted in {category} on {date} by {author}" label="Blog Meta" description="Allowed metas {category}, {date}, {modified_date}, {author}" />
+				<field name="blog_date_format" type="text" default="F d, Y" label="Date Format" description="Use php date format." />
+				<field name="blog_show_readmore" type="radio" default="1" label="Show Readmore Link" description="Show Readmore Link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="blog_readmore_text" type="text" default="Continue reading" label="Readmore Text" description="Readmore" />				
+				<field name="blog_show_comment_link" type="radio" default="1" label="Show Comment Link" description="Link on Comments">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="blog_comment_text" type="text" default="Leave a reply" label="Comment Text" description="Comment Text" />
+				<field name="blog_single_comment_text" type="text" default="1 Reply" label="Single Comment Text" description="Single Comment" />
+				<field name="blog_multiple_comment_text" type="text" default="% Replies" label="Multiple Comments Text" description="Multiple Comments" />
+			</fields>
+			
+			<fields name="post">
+				<field name="post_show_title" type="radio" default="1" label="Show Title" description="Show Post Title">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="post_linked_title" type="radio" default="1" label="Linked Title" description="Post title link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="post_show_meta" type="radio" default="1" label="Show Meta" description="Show Meta">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>			
+				<field name="post_meta" type="text" default="Posted in {category} on {date} by {author}" label="Blog Meta" description="Allowed metas {category}, {date}, {modified_date}, {author}" />
+				<field name="post_date_format" type="text" default="F d, Y" label="Date Format" description="Use php date format." />
+				<field name="post_show_readmore" type="radio" default="1" label="Show Readmore Link" description="Show Read More">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="post_readmore_text" type="text" default="Continue reading" label="Readmore Text" description="Read More" />				
+				<field name="post_show_comment_link" type="radio" default="1" label="Show Comment Link" description="Link on Comments">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="post_comment_text" type="text" default="Leave a reply" label="Comment Text" description="Comment Text" />
+				<field name="post_single_comment_text" type="text" default="1 Reply" label="Single Comment Text" description="Single Comment" />
+				<field name="post_multiple_comment_text" type="text" default="% Replies" label="Multiple Comments Text" description="Multiple Comments" />
+			</fields>
+
+			<!--Category Settings-->
+			<fields name="category">			
+				<field name="category_show_title" type="radio" default="1" label="Show Title" description="Show Category Title">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="category_linked_title" type="radio" default="1" label="Linked Title" description="Category title link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="category_show_meta" type="radio" default="1" label="Show Meta" description="Show Meta">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>			
+				<field name="category_meta" type="text" default="Posted in {category} on {date} by {author}" label="Blog Meta" description="Allowed metas {category}, {date}, {modified_date}, {author}" />
+				<field name="category_date_format" type="text" default="F d, Y" label="Date Format" description="Use php date format." />
+				<field name="category_show_readmore" type="radio" default="1" label="Show Readmore Link" description="Read More Link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="category_readmore_text" type="text" default="Continue reading" label="Readmore Text" description="Read More" />				
+				<field name="category_show_comment_link" type="radio" default="1" label="Show Comment Link" description="Link on Comments">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="category_comment_text" type="text" default="Leave a reply" label="Comment Text" description="Comment Text" />
+				<field name="category_single_comment_text" type="text" default="1 Reply" label="Single Comment Text" description="Single Comment Text" />
+				<field name="category_multiple_comment_text" type="text" default="% Replies" label="Multiple Comments Text" description="Multiple Comments Text" />
+			</fields>
+
+			<fields name="archive">
+				<field name="archive_show_title" type="radio" default="1" label="Show Title" description="Show Archive Title">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="archive_linked_title" type="radio" default="1" label="Linked Title" description="Archive title link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="archive_show_author" type="radio" default="1" label="Show Author" description="Show Author">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="archive_show_date" type="radio" default="1" label="Show Date" description="Show Date">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="archive_date_format" type="text" default="d, j Y" label="Date Format" description="Use php date format." />
+				<field name="archive_show_modified_date" type="radio" default="1" label="Show Modified Date" description="Show Modified Date">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="archive_show_readmore" type="radio" default="1" label="Show Readmore Link" description="Show Read More Link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="archive_readmore_text" type="text" default="Continue reading" label="Readmore Text" description="Readmore Text" />				
+				<field name="archive_show_comment_link" type="radio" default="1" label="Show Comment Link" description="Link on Comments">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="archive_comment_text" type="text" default="Leave a reply" label="Comment Text" description="Comment Text" />
+				<field name="archive_single_comment_text" type="text" default="1 Reply" label="Single Comment Text" description="Single Comment Text" />
+				<field name="archive_multiple_comment_text" type="text" default="% Replies" label="Multiple Comments Text" description="Multiple Comments Text" />
+			</fields>
+
+			<fields name="tag">
+				<field name="tag_show_title" type="radio" default="1" label="Show Title" description="Show Tag Title">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tag_linked_title" type="radio" default="1" label="Linked Title" description="Tag title link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tag_show_author" type="radio" default="1" label="Show Author" description="Show Author">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tag_show_date" type="radio" default="1" label="Show Date" description="Show Date">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tag_date_format" type="text" default="d, j Y" label="Date Format" description="Use php date format." />
+				<field name="tag_show_modified_date" type="radio" default="1" label="Show Modified Date" description="Show Modified Date">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tag_show_readmore" type="radio" default="1" label="Show Readmore Link" description="Show Read More Link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tag_readmore_text" type="text" default="Continue reading" label="Readmore Text" description="Read More Text" />				
+				<field name="tag_show_comment_link" type="radio" default="1" label="Show Comment Link" description="Link on Comments">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tag_comment_text" type="text" default="Leave a reply" label="Comment Text" description="Comment Text" />
+				<field name="tag_single_comment_text" type="text" default="1 Reply" label="Single Comment Text" description="Single Comment Text" />
+				<field name="tag_multiple_comment_text" type="text" default="% Replies" label="Multiple Comments Text" description="Multiple Comments Text" />
+			</fields>
+			
+			<fields name="author">
+				<field name="author_show_title" type="radio" default="1" label="Show Title" description="Show Author Title">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="author_linked_title" type="radio" default="1" label="Linked Title" description="Author title link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="author_show_author" type="radio" default="1" label="Show Author" description="Show Author">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="author_show_date" type="radio" default="1" label="Show Date" description="Show Date">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="author_date_format" type="text" default="d, j Y" label="Date Format" description="Use php date format." />
+				<field name="author_show_modified_date" type="radio" default="1" label="Show Modified Date" description="Show Modified Date">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="author_show_readmore" type="radio" default="1" label="Show Readmore Link" description="Show Read More Link">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="author_readmore_text" type="text" default="Continue reading" label="Readmore Text" description="Read More Text" />				
+				<field name="author_show_comment_link" type="radio" default="1" label="Show Comment Link" description="Link on Comments">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="author_comment_text" type="text" default="Leave a reply" label="Comment Text" description="Comment Text" />
+				<field name="author_single_comment_text" type="text" default="1 Reply" label="Single Comment Text" description="Single Comment Text" />
+				<field name="author_multiple_comment_text" type="text" default="% Replies" label="Multiple Comments Text" description="Multiple Comments Text" />
+			</fields>
+			
+		</fieldset>	
+		
+		<fieldset name="Layout" icon="icon-th color5">
+			<field name="layout_width" type="list" default="1170" label="Layout Width" description="Set layout width">
+				<option value="1170">1170 (px)</option>
+				<option value="940">940 (px)</option>
+			</field>
+			
+			<field name="layout_type" type="radio" default="responsive" label="Layout Type" description="Set the type of layout as responsive or fixed.">
+				<option value="responsive">Responsive</option>
+				<option value="fixed">Fixed</option>
+			</field>
+
+			<field name="left_sidebar_width" type="list" default="3" label="Left Sidebar Width" description="Set the left sidebar width.">
+				<option value="1">span1</option>
+				<option value="2">span2</option>
+				<option value="3">span3</option>
+				<option value="4">span4</option>
+				<option value="5">span5</option>
+				<option value="6">span6</option>
+				<option value="7">span7</option>
+				<option value="8">span8</option>
+			</field>
+			
+			<field name="right_sidebar_width" type="list" default="3" label="Right Sidebar Width" description="Set the left sidebar width.">
+				<option value="1">span1</option>
+				<option value="2">span2</option>
+				<option value="3">span3</option>
+				<option value="4">span4</option>
+				<option value="5">span5</option>
+				<option value="6">span6</option>
+				<option value="7">span7</option>
+				<option value="8">span8</option>
+			</field>
+			
+		</fieldset>		
+		
+		<!--Start Menu Tab-->
+		<fieldset name="Menu" icon="icon-list color6">
+			<field name="submenu_position" type="list" default="0" label="Submenu Position" description="Set the alignment of submenu.">
+				<option value="0">Default</option>
+				<option value="1">Center</option>
+			</field>
+			<field name="init_x" type="text" default="0" label="Intial X Offset" decsription="Horizontal distance of the primary submenu" />
+			<field name="init_y" type="text" default="0" label="Intial Y Offset" description="Vertical distance of the primary submenu" />
+			<field name="sub_x" type="text" default="0" label="Subsequent X Offset" decsription="Horizontal distance of the others submenu" />
+			<field name="sub_y" type="text" default="0" label="Subsequent Y Offset" decsription="Vertical distance of the others submenu" />
+        </fieldset>
+        <!--End Menu Tab-->
+		
+		<fieldset name="Fonts" icon="icon-font color9">
+			<field name="body_font" type="text" default="" label="Body Font" description="Add google font name. eg Yanone+Kaffeesatz:400. Get your desire fonts from http://www.google.com/webfonts" />
+			<field name="body_font_area" type="text" default="" label="Body Font Area" description="Set the selector for body font. eg. body" />
+			<field name="header_font" type="text" default="" label="Headers Font" description="Add google font name. eg Yanone+Kaffeesatz:400. Get your desire fonts from http://www.google.com/webfonts" />
+			<field name="header_font_area" type="text" default="" label="Headers Font Area" description="Set the selector for header fonts. eg h1,h2,h3,h4,h5" />
+			<field name="others_font" type="text" default="" label="Others Font" description="Add google font name. eg Yanone+Kaffeesatz:400. Get your desire fonts from http://www.google.com/webfonts" />
+			<field name="others_font_area" type="textarea" default="" label="Others Font Area" description="Set the selector for body font. eg .classname" />
+		</fieldset>
+		
+		<fieldset name="Advanced" icon="icon-cogs color3">
+			<field name="enable_ga" type="radio" default="0" label="Google Analytics">
+				<option value="1">Enable</option>
+				<option value="0">Disable</option>
+			</field>
+			<field name="ga_code" type="textarea" rows="6" cols="30" default="" label="Analytic code" description="Analytics code" />
+			
+			<field name="validator" type="radio" default="1" label="Validation link" description="Whether to show the HTML and CSS validation link.">
+				<option value="1">Enable</option>
+				<option value="0">Disable</option>
+			</field>	
+			
+			<field name="gototop" type="radio" default="1" label="Goto Top" description="Whether to show or hide goto top feature">
+				<option value="1">Enable</option>
+				<option value="0">Disable</option>
+			</field>	
+			
+			<field name="wpcredit" type="radio" default="1" label="Wordpress Link" description="Whether to show the wordpress credit link.">
+				<option value="1">Enable</option>
+				<option value="0">Disable</option>
+			</field>
+			<field name="showadminbar" type="radio" default="1" label="Admin Bar" description="Whether to show or hide admin bar.">
+				<option value="1">Enable</option>
+				<option value="0">Disable</option>
+			</field>
+
+			<field name="less" type="radio" default="1" label="Less" description="Less">
+				<option value="1">Enable</option>
+				<option value="0">Disable</option>
+			</field>	
+			
+		</fieldset>
+		
+	</config>
+</helix>
